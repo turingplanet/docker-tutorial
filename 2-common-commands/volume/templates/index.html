@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sample Book Info</title>
+    </head>
+    <body>
+        <h1>Volume Sample Book</h1>
+        <div id='content-info'></div>
+        <script>
+            fetch('./book')
+                .then(response => response.json())
+                .then(data => {
+                    document.querySelector('#content-info').innerText = data.title
+                })
+        </script>
+    </body>
+</html>
