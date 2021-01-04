@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+
+  redis-server:
+    image: "redis"
+
+  backend:  
+    environment:
+      - REDIS_HOST=redis-server
+    build: ./backend
+    ports: 
+      - "5000:5000"
+      

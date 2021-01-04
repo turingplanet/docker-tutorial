@@ -1,13 +1,6 @@
 from flask import Flask, render_template
-import json
 
 app = Flask(__name__)
-
-@app.route('/book')
-def json_file():
-    file = open('volume_data/book.json')
-    json_data = json.load(file)
-    return json_data
 
 @app.route('/')
 def home():
